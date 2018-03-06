@@ -19,7 +19,7 @@
     <div class="container">
         <h1>Doggie Search!</h1>
     
-        <!-- Movies will Get Dumped Dere -->
+        <!-- Doggies will Get Dumped Dere -->
         <div id="doggie-view"></div>
     
         <!-- Rendered Buttons will get Dumped Here  -->
@@ -47,11 +47,7 @@ function displayDoggieInfo() {
 
   var doggie = $(this).attr("data-name");
 
-        var APIKey = "qnf0y97yxb1cdmsTB6pO7UgudG1f9gv3";
-
-        // Here we are building the URL we need to query the database    
-
-        var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=qnf0y97yxb1cdmsTB6pO7UgudG1f9gv3&tag=&rating=G";
+        var queryURL = "https://api.giphy.com/v1/gifs/translate?api_key=qnf0y97yxb1cdmsTB6pO7UgudG1f9gv3&s=doggie";
 
 
         // We then created an AJAX call
@@ -59,7 +55,7 @@ function displayDoggieInfo() {
             url: queryURL,
             method: "GET"
           }).then(function(response) {
-            $("#doggie-view").text(JSON.stringify(response));
+            $("#doggie-view").html(JSON.stringify(response));
             renderButtons();
           });
         }
