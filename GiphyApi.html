@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Giphy Pull</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    </head>
-    <body>
-        <div id="guitarButtons">
 
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Giphy Pull</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-        <form id="guitar-forms">
-            <label for="guitar-input">Add an guitar</label>
-            <input type="text" id="guitar-Input">
+</head>
 
-        </form>
+<body>
+    <div id="dogButtons">
 
-        <div id="guitars">
+    </div>
 
-        </div>
-        
-        
-        <script src="giphy.js"></script>
+    <form id="dog-forms">
+        <label for="dog-input">Add a dog</label>
+        <input type="text" id="dog-Input">
 
-    </body>
+    </form>
+
+    <div id="dogs">
+
+    </div>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript">
+
+        var APIKey = "qnf0y97yxb1cdmsTB6pO7UgudG1f9gv3";
+
+        // Here we are building the URL we need to query the database    
+
+        var queryURL = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=qnf0y97yxb1cdmsTB6pO7UgudG1f9gv3&limit=5")
+
+        // We then created an AJAX call
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(queryURL);
+            console.log(response);
+        });
+
+    </script>
+
+
+</body>
+
 </html>
