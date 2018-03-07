@@ -17,23 +17,25 @@
 
 <body>
   <div class="container">
-    <h1>Doggie Search!</h1>
+    <center><h1>Doggie Gif Search!</h1></center>
 
-    <!-- Doggies will Get Dumped Dere -->
-    <div id="doggie-view"></div>
-
-    <!-- Rendered Buttons will get Dumped Here  -->
-    <div id="buttons-view"></div>
-
-    <form id="doggie-form">
+    <center><form id="doggie-form">
       <label for="doggie-input">Add a doggie!</label>
       <input type="text" id="doggie-input">
       <br>
 
       <!-- Button triggers new doggie to be added -->
       <input id="add-doggie" type="submit" value="doggie">
-    </form>
-  </div>
+    </form></center>
+
+     <!-- Rendered Buttons will get Dumped Here  -->
+     <center><div id="buttons-view"></div></center>
+  
+
+  <!-- Doggies will Get Dumped Dere -->
+  <center><div id="doggie-view"></div></center>
+
+</div>
 
 
 
@@ -41,13 +43,13 @@
   <script type="text/javascript">
 
     // Initial array of doggies
-    var doggies = ["German Shepherd", "Doberman", "Labrador", "Golden Retriever", "Pug", "Poodle", "terrier", "Bulldog", "Saint Bernard", "Greyhound", "Boxer", "Bassett Hound"];
+    var doggies = ["German Shepherd", "Doberman", "Labrador", "Golden Retriever", "Pug", "Poodle", "terrier", "Bulldog", "Saint Bernard", "Greyhound", "Beagle", "Bassett Hound"];
 
     // Function for dumping the JSON content for each button into the div
     function displayDoggieInfo() {
 
       var doggie = $(this).attr("data-name");
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + doggie + "&api_key=qnf0y97yxb1cdmsTB6pO7UgudG1f9gv3&limit=5"
+      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + doggie + "&api_key=qnf0y97yxb1cdmsTB6pO7UgudG1f9gv3&limit=10"
 
       
 
